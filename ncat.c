@@ -12,7 +12,7 @@
 int main(int argc, char **argv)
 {
     if (argc != 2) {
-        printf(stderr, "%s\n", "usage: netcat <file_name>");
+        fprintf(stderr, "%s\n", "usage: netcat <file_name>");
         exit(1);
     }
     char *filename = argv[1];
