@@ -13,12 +13,16 @@
 
 int main(int argc, char**argv)
 {
-    struct addinfo hints, *rec, *p;
+    struct addrinfo hints, *rec, *p;
     int status;
     char ipstr[INET6_ADDRSTRLEN];
 
-    if (arg != 2){
+    if (argc != 2){
         fprintf(stderr, "usage: showip hostname\n");
         return 1;
     }
+
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_UNSPEC; //AF_INET or AF_INET6
+    hints.ai_socktype = SOCK_STREAM;
 }
